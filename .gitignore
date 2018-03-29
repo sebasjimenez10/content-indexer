@@ -16,7 +16,5 @@
 .byebug_history
 
 /vendor
-
 /**/*.DS_Store
-
 /coverage/**/*
