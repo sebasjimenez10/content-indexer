@@ -10,6 +10,11 @@
 # Cop supports --auto-correct.
 # Configuration parameters: Include, TreatCommentsAsGroupSeparators.
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
+AllCops:
+  Exclude:
+    - 'db/migrate/**'
+    - vendor/**/*
+
 Bundler/OrderedGems:
   Exclude:
     - 'Gemfile'

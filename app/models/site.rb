@@ -7,7 +7,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 class Site < ApplicationRecord
   has_many :elements
 

@@ -1,5 +1,6 @@
 module API
   module V1
+    # Site resource
     class SiteResource < ApplicationResource
       attributes :url
 

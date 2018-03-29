@@ -1,5 +1,6 @@
 module API
   module V1
+    # Site processor
     class SiteProcessor < JSONAPI::Processor
       after_create_resource :scrape_site_operation
 
