@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20180328222257) do
   create_table "elements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "tag"
     t.text "content"
-    t.bigint "site_id"
+    t.uuid "site_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["site_id"], name: "index_elements_on_site_id"

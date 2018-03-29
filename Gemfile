@@ -43,6 +43,7 @@ group :development do
 end
 
 group :test do
+  gem 'simplecov', require: false
   gem 'shoulda'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'

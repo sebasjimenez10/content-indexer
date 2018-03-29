@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: elements
+#
+#  id         :uuid             not null, primary key
+#  tag        :string
+#  content    :text
+#  site_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'rails_helper'
 
 RSpec.describe Element, type: :model do

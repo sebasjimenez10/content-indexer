@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: sites
+#
+#  id         :uuid             not null, primary key
+#  url        :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'rails_helper'
 
 RSpec.describe Site, type: :model do
