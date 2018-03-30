@@ -26,3 +26,5 @@ There is a rake task to check multiple things. If you run `rails check:all` it w
 # Notes
 
 There is a bundle configuration which installs all the gems in the `vendor/bundle` folder. The purpose behind this is to be able to easily find issue with external libraries, set breakpoint and even make changes to the code.
+
+There is an improved version of this application that includes secutiry. There is another application that provides security tokens and users registration. This can be test by combining the code in the `secured` branch along with the `master` branch of the app called `content-indexer-registrations`.
