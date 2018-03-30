@@ -20,6 +20,9 @@ gem 'jsonapi-resources'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# Knock for JWT Authentication
+gem 'knock'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -41,6 +44,10 @@ group :development, :test do
   gem 'shoulda'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :development do

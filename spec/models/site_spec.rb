@@ -6,6 +6,7 @@
 #  url        :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :uuid
 #
 
 require 'rails_helper'
@@ -15,6 +16,7 @@ RSpec.describe Site, type: :model do
 
   describe 'Validations' do
     it { should validate_presence_of(:url) }
+    it { should validate_presence_of(:user_id) }
   end
 
   describe 'Associations' do
