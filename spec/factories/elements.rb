@@ -5,7 +5,7 @@
 #  id         :uuid             not null, primary key
 #  tag        :string
 #  content    :text
-#  site_id    :integer
+#  site_id    :uuid
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

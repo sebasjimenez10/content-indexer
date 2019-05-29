@@ -1,4 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'database_cleaner'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -55,11 +56,26 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  # Set request header content type compliant with jsonapi
-  config.before(:each, type: :controller) do
-    @request.headers['Content-Type'] = 'application/vnd.api+json'
-  end
-
   # Including support helper lib for json responses
   config.include Support::JsonHelper
+
+  # Included support for adding headers
+  config.include Support::HeadersHelper
+
+  # Add content type for json api
+  config.before(:each, type: :controller) do
+    header 'Content-Type', 'application/vnd.api+json'
+  end
+
+  # Database cleaner config
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 end
